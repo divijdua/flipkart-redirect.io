@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Unicommerce <> Flipkart
+	</title>
+</head>
+
+<body>
+	<h1 style="color:blue;">
+		Unicommerce
+	</h1>
+	
+	<p>Redirecting...</p>
+	
+	<script>
+		window.onload = function() {
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const redirect_uri = urlParams.get('state')
+		const code = urlParams.get('code')
+		decoded_uri = decodeURIComponent(redirect_uri);
+		console.log(code);
+		console.log(redirect_uri);
+		console.log(queryString);
+		window.location.href=decoded_uri+'?code='+code;
+		};
+	</script>
+</body>
+</html>
